@@ -5,6 +5,8 @@ module async_tb;
   async_8bit  uut(.clk(clk),.rst(rst),.d(d),.q(q));
   always #5 clk =~clk;
  initial begin
+   $dumpfile("dump.vcd");
+   $dumpvars;
     $monitor("time=%0t rst=%b d=%h q=%h",
              $time, rst, d, q);
  end
